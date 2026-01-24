@@ -5,23 +5,53 @@ This mod adds the ability to dismantle vehicles that are in poor condition.
 When a vehicle reaches a low health threshold, players can dismantle it to obtain parts and gain experience.
 
 [h2]Sandbox Options:[/h2]
-• Item Drop Chance on Dismantle
+[list]
+[*] Item Drop Chance on Dismantle
   Controls the probability of items dropping when dismantling a vehicle.
 
-• XP Reward on Dismantle 
+[*] XP Reward on Dismantle 
   Defines how much experience is awarded for dismantling a vehicle.
 
-• Health Threshold for Dismantling  
+[*] Health Threshold for Dismantling  
   Sets the minimum vehicle health percentage required to allow dismantling.
+[/list]
 
 [h2]FAQ:[/h2]
-• Can it be added or removed from an existing save?  Yes.
+[list]
+[*] Can it be added or removed from an existing save?  Yes.
 
-• Does it work in Multiplayer?  Yes.
+[*] Does it work in Multiplayer?  Yes.
 
-• Conflicts with other mods?
+[*] Conflicts with other mods?
   Mods that provide the same or similar vehicle dismantling functionality may conflict.
 
+[*] Can I package the mod for my server? Yes
+[/list]
 
+[hr][/hr]
 
-[url=https://github.com/4lnx]Source Code[/url]
+[h2]Notes:[/h2]
+"Chance of obtaining items when disassembling," this setting still depends on the character's 
+Metallurgy and Mechanics level.
+The higher the skill levels, the more items drop, and the faster the disassembly.
+Player has an additional 5% bonus for each Trait, BLACKSMITH, and CRAFTY.
+
+[h3]Practical example: [/h3]
+Player with:
+. BaseChance = 10%
+. TotalSkillLevels = 12
+. Useful Traits = 2
+
+[code] DropChance = 10 + (2 x 12) + (5 x 2) = 44%
+
+The item will drop if:
+Random(0.99) < DropChance[/code]
+
+The 10% value is quite conservative; a player with few skills generates little loot, 
+but when they have higher levels, they generate a lot of loot.
+
+[hr][/hr]
+
+[h3]This mod is free to be edited, copied, redistributed, packaged,
+or used however you like, as long as you respect the GPL-3.0 license.
+The source code can be found at the [url=https://github.com/4lnx/TheMechanicDismantle]link[/url].[/h3]
