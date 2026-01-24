@@ -1,0 +1,8 @@
+name=The Mechanic - Advanced Dismantle
+id=TheMechanicDismantle
+author=4Lnx
+description=Adds the ability to dismantle damaged vehicles with a Condition less than 20% (Configurable via SandBox) that are not burned or destroyed. It requires a full torch and welding mask. Disassembling takes time, consumes all the fuel in the blowtorch, based on your skills. Returns rewards such as scrap materials and XP, configurable via sandbox options.
+versionMin=42.0.0
+poster=poster.png
+icon=modicon.png
+category=vehicle

@@ -1,0 +1,29 @@
+
+VERSION = 1,
+
+option TheMechanic.DismantleItemDropChance {
+    page = TheMechanic,
+    type = integer,
+    min = 1,
+    max = 100,
+    default = 10,
+    translation = TheMechanic_DismantleItemDropChance,
+}
+
+option TheMechanic.DismantleXpReward {
+    page = TheMechanic,
+    type = integer,
+    min = 1,
+    max = 30,
+    default = 10,
+    translation = TheMechanic_DismantleXpReward,
+}
+
+option TheMechanic.DismantleHealthThreshold {
+    page = TheMechanic,
+    type = double,
+    min = 5.0,
+    max = 100.0,
+    default = 20.0,
+    translation = TheMechanic_DismantleHealthThreshold,
+}

@@ -1,0 +1,9 @@
+ContextMenu_PTBR = {
+    ContextMenu_TheMechanic_Dismantle = "Desmontar Veículo",
+    ContextMenu_Tooltip_Required_Items = "Itens necessários",
+    ContextMenu_Tooltip_Full_BlowTorch = "Maçarico Cheio 0/1",
+    ContextMenu_Tooltip_Require_Full_BlowTorch = "Requer Maçarico Cheio 0/1",
+    ContextMenu_Tooltip_BlowTorch_Missing = "Maçarico 0/10",
+    ContextMenu_Tooltip_Welding_Mask = "Máscara de Solda 0/1",
+    ContextMenu_Tooltip_Vehicle_Low_Condition = "Veículo Baixa Condição 0/1",
+}

@@ -1,0 +1,12 @@
+Sandbox_EN = {
+    Sandbox_TheMechanic = "Vehicle Dismantle",
+
+    Sandbox_TheMechanic_DismantleItemDropChance = "Dismantle Item Drop Chance",
+    Sandbox_TheMechanic_DismantleItemDropChance_tooltip = "Probability of dropping items when dismantling a vehicle",
+
+    Sandbox_TheMechanic_DismantleXpReward = "Dismantle XP Reward",
+    Sandbox_TheMechanic_DismantleXpReward_tooltip = "Amount of XP awarded for dismantling a vehicle",
+
+    Sandbox_TheMechanic_DismantleHealthThreshold = "Dismantle Health Threshold",
+    Sandbox_TheMechanic_DismantleHealthThreshold_tooltip = "Minimum vehicle health percentage required to dismantle",
+}

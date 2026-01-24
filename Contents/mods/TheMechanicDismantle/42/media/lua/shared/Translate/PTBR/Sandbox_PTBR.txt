@@ -1,0 +1,12 @@
+Sandbox_PTBR = {
+    Sandbox_TheMechanic = "Desmontagem de Veículos",
+
+    Sandbox_TheMechanic_DismantleItemDropChance = "Chance de Drop de Itens no Desmanche",
+    Sandbox_TheMechanic_DismantleItemDropChance_tooltip = "Probabilidade de dropar itens ao desmanchar um veículo",
+
+    Sandbox_TheMechanic_DismantleXpReward = "Recompensa de XP no Desmanche",
+    Sandbox_TheMechanic_DismantleXpReward_tooltip = "Quantidade de XP concedida por desmanchar um veículo",
+
+    Sandbox_TheMechanic_DismantleHealthThreshold = "Limite de Saúde para Desmanche",
+    Sandbox_TheMechanic_DismantleHealthThreshold_tooltip = "Porcentagem mínima de saúde do veículo necessária para desmanchar",
+}

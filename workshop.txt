@@ -1,0 +1,6 @@
+version=1
+id=
+title=The Mechanic - Advanced Dismantle Vehicle
+description=Allows dismantling of unburnt vehicles with low condition.
+tags=Build 42
+visibility=unlisted

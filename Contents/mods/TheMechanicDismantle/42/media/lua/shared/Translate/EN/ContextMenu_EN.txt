@@ -1,0 +1,9 @@
+ContextMenu_EN = {
+    ContextMenu_TheMechanic_Dismantle = "Dismantle Vehicle",
+    ContextMenu_Tooltip_Required_Items = "Required items",
+    ContextMenu_Tooltip_Full_BlowTorch = "Full BlowTorch 0/1",
+    ContextMenu_Tooltip_Require_Full_BlowTorch = "Require Full BlowTorch 0/1",
+    ContextMenu_Tooltip_BlowTorch_Missing = "BlowTorch 0/10",
+    ContextMenu_Tooltip_Welding_Mask = "Welding Mask 0/1",
+    ContextMenu_Tooltip_Vehicle_Low_Condition = "Vehicle Low Condition 0/1",
+}
