@@ -35,7 +35,6 @@ function TheMechanicDismantleVehicle:getDuration()
 end
 
 function TheMechanicDismantleVehicle:chanceAddItem(item)
-
     local perks = self:getPlayerPerks()
 
     local sandbox = SandboxVars.TheMechanic
@@ -45,8 +44,8 @@ function TheMechanicDismantleVehicle:chanceAddItem(item)
 
     local traitCount = 0
     if perks.blacksmith2 then traitCount = traitCount + 1 end
-    if perks.blacksmith  then traitCount = traitCount + 1 end
-    if perks.crafty      then traitCount = traitCount + 1 end
+    if perks.blacksmith then traitCount = traitCount + 1 end
+    if perks.crafty then traitCount = traitCount + 1 end
     local handyBonus = traitCount * 5
 
     local finalChance = baseChance + skillBonus + handyBonus
@@ -131,97 +130,28 @@ function TheMechanicDismantleVehicle:stop()
 end
 
 function TheMechanicDismantleVehicle:perform()
-    -- Para som
     if self.sound and self.sound ~= 0 then
         self.character:getEmitter():stopSound(self.sound)
     end
 
-    local sandbox = SandboxVars.TheMechanic
-    local totalXp = sandbox and sandbox.DismantleXpReward or 10
+    self.item:setJobDelta(0)
 
-    self:chanceAddItem("MetalBar")
-    self:chanceAddItem("MetalBar")
-    self:chanceAddItem("ElectricWire")
-    self:chanceAddItem("Wire")
-    self:chanceAddItem("MetalPipe")
-    self:chanceAddItem("MetalPipe")
-    self:chanceAddItem("ElectronicsScrap")
-    self:chanceAddItem("SheetMetal")
-    self:chanceAddItem("SheetMetal")
-    self:chanceAddItem("SheetMetal")
-    self:chanceAddItem("SmallSheetMetal")
-    self:chanceAddItem("SmallSheetMetal")
-    self:chanceAddItem("SmallSheetMetal")
-    self:chanceAddItem("ScrapMetal")
-    self:chanceAddItem("ScrapMetal")
-    self:chanceAddItem("ScrapMetal")
-    self:chanceAddItem("Screws")
-    self:chanceAddItem("Screws")
-    self:chanceAddItem("ElectronicsScrap")
-    self:chanceAddItem("LeatherStripsDirty")
-    self:chanceAddItem("RippedSheetsDirty")
-    self:chanceAddItem("LightBulb")
-    self:chanceAddItem("Amplifier")
-    self:chanceAddItem("EngineParts")
-    self:chanceAddItem("UnusableMetal")
+    ISBaseTimedAction.perform(self)
+end
 
-    -- Build 42
-    self:chanceAddItem("CopperScrap")
-    self:chanceAddItem("AluminumScrap")
-    self:chanceAddItem("AluminumScrap")
-    self:chanceAddItem("SteelScrap")
-    self:chanceAddItem("SteelScrap")
-    self:chanceAddItem("SteelScrap")
-    self:chanceAddItem("IronScrap")
-    self:chanceAddItem("IronBand")
-    self:chanceAddItem("IronBandSmall")
-    self:chanceAddItem("SteelBar")
-    self:chanceAddItem("SteelBarHalf")
-    self:chanceAddItem("SteelBarQuarter")
-    self:chanceAddItem("NutsBolts")
-    self:chanceAddItem("NutsBolts")
-    self:chanceAddItem("NutsBolts")
-
-    for i = 1, 10 do
-        self.item:Use()
-    end
-
-    local sumSkills = self:getPlayerPerks().sumSkills
-    local damageChance = 40 - (sumSkills - 2) * (35 / 18)
-    damageChance = math.max(5, math.min(40, damageChance))
-    if ZombRand(100) < damageChance then
-        local wornItems = self.character:getWornItems()
-        if wornItems then
-            for i = 0, wornItems:size() - 1 do
-                local wi = wornItems:get(i)
-                local item = wi and wi:getItem()
-                if item and item:getFullType() == "Base.WeldingMask" then
-                    local currentCondition = item:getCondition()
-                    if currentCondition > 0 then
-                        item:setCondition(currentCondition - 1)
-                    end
-                    break
-                end
-            end
-        end
-    end
-
-    sendAddXp(self.character, Perks.MetalWelding, totalXp, true)
-
+function TheMechanicDismantleVehicle:complete()
     if isClient() then
         sendClientCommand(
             self.character,
-            "vehicle",
-            "remove",
-            { vehicle = self.vehicle:getId() }
+            "TheMechanic",
+            "DismantleVehicle",
+            { vehicleId = self.vehicle:getId() }
         )
     else
-        self.vehicle:permanentlyRemove()
+        TheMechanic.ServerDismantleVehicle(self.character, self.vehicle)
     end
 
-    self.item:setJobDelta(0);
-
-    ISBaseTimedAction.perform(self)
+    return true
 end
 
 function TheMechanicDismantleVehicle:new(character, vehicle)

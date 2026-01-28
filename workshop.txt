@@ -1,6 +1,62 @@
 version=1
 id=3652723536
 title=The Mechanic - Advanced Dismantle Vehicle
-description=Allows dismantling of unburnt vehicles with low condition.
+description=[h1]The Mechanic - Dismantle[/h1]
+description=
+description=[h2]About:[/h2]
+description=This mod adds the ability to dismantle vehicles that are in poor condition.
+description=When a vehicle reaches a low health threshold, players can dismantle it to obtain parts and gain experience.
+description=
+description=[h2]Sandbox Options:[/h2]
+description=[list]
+description=[*] Item Drop Chance on Dismantle
+description=  Controls the probability of items dropping when dismantling a vehicle.
+description=
+description=[*] XP Reward on Dismantle 
+description=  Defines how much experience is awarded for dismantling a vehicle.
+description=
+description=[*] Health Threshold for Dismantling  
+description=  Sets the minimum vehicle health percentage required to allow dismantling.
+description=[/list]
+description=
+description=[h2]FAQ:[/h2]
+description=[list]
+description=[*] Can it be added or removed from an existing save?  Yes.
+description=
+description=[*] Does it work in Multiplayer?  Yes.
+description=
+description=[*] Conflicts with other mods?
+description=  Mods that provide the same or similar vehicle dismantling functionality may conflict.
+description=
+description=[*] Can I package the mod for my server? Yes
+description=[/list]
+description=
+description=[hr][/hr]
+description=
+description=[h2]Notes:[/h2]
+description="Chance of obtaining items when disassembling," this setting still depends on the character's 
+description=Metallurgy and Mechanics level.
+description=The higher the skill levels, the more items drop, and the faster the disassembly.
+description=Player has an additional 5% bonus for each Trait, BLACKSMITH, and CRAFTY.
+description=
+description=[h3]Practical example: [/h3]
+description=Player with:
+description=. BaseChance = 10%
+description=. TotalSkillLevels = 12
+description=. Useful Traits = 2
+description=
+description=[code] DropChance = 10 + (2 x 12) + (5 x 2) = 44%
+description=
+description=The item will drop if:
+description=Random(0.99) < DropChance[/code]
+description=
+description=The 10% value is quite conservative; a player with few skills generates little loot, 
+description=but when they have higher levels, they generate a lot of loot.
+description=
+description=[hr][/hr]
+description=
+description=[h3]This mod is free to be edited, copied, redistributed, packaged,
+description=or used however you like, as long as you respect the GPL-3.0 license.
+description=The source code can be found at the [url=https://github.com/4lnx/TheMechanicDismantle]link[/url].[/h3]
 tags=Build 42
 visibility=public

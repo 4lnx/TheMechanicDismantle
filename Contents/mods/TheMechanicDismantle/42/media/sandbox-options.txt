@@ -12,10 +12,10 @@ option TheMechanic.DismantleItemDropChance {
 
 option TheMechanic.DismantleXpReward {
     page = TheMechanic,
-    type = integer,
-    min = 1,
-    max = 30,
-    default = 10,
+    type = double,
+    min = 1.0,
+    max = 100.0,
+    default = 10.0,
     translation = TheMechanic_DismantleXpReward,
 }
 
