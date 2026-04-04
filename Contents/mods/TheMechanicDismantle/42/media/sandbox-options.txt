@@ -1,7 +1,7 @@
 
 VERSION = 1,
 
-option TheMechanic.DismantleItemDropChance {
+option TheMechanic_DismantleItemDropChance {
     page = TheMechanic,
     type = integer,
     min = 1,
@@ -10,7 +10,7 @@ option TheMechanic.DismantleItemDropChance {
     translation = TheMechanic_DismantleItemDropChance,
 }
 
-option TheMechanic.DismantleXpReward {
+option TheMechanic_DismantleXpReward {
     page = TheMechanic,
     type = double,
     min = 1.0,
@@ -19,7 +19,7 @@ option TheMechanic.DismantleXpReward {
     translation = TheMechanic_DismantleXpReward,
 }
 
-option TheMechanic.DismantleHealthThreshold {
+option TheMechanic_DismantleHealthThreshold {
     page = TheMechanic,
     type = double,
     min = 5.0,
